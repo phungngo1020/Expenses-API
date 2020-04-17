@@ -2,6 +2,7 @@ const express = require('express')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const Expense = require('../models/expense')
+const Test = require('../models/test')
 
 // CREATE a expense
 router.post('/expenses', auth, async (req, res) => {
@@ -13,6 +14,16 @@ router.post('/expenses', auth, async (req, res) => {
     try {
         await expense.save()
         res.status(201).send(expense)
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
+router.post('/all', async (req, res) => {
+    const test = new Test(req.body) // ...req.body copy all values from req.body over
+    try {
+        await test.save()
+        res.status(201).send(test)
     } catch (error) {
         res.status(500).send(error)
     }
