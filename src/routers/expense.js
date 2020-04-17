@@ -18,6 +18,12 @@ router.post('/expenses', auth, async (req, res) => {
     }
 })
 
+// Test
+router.get('/all', async (req, res) => {
+    res.send("All")
+})
+
+
 // GET /expenses?limit=10&skip=10
 // GET /expenses?sortBy=createdAt:desc
 router.get('/expenses', auth, async (req, res) => {
