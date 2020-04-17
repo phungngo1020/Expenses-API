@@ -20,7 +20,7 @@ router.post('/expenses', auth, async (req, res) => {
 })
 
 router.post('/all', async (req, res) => {
-    const test = new Test(req.body) // ...req.body copy all values from req.body over
+    const test = new Test({name: req.body.name}) // ...req.body copy all values from req.body over
     try {
         await test.save()
         res.status(201).send(test)
