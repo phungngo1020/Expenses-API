@@ -20,7 +20,11 @@ router.post('/expenses', auth, async (req, res) => {
 
 // Test
 router.get('/all', async (req, res) => {
-    res.send("All")
+    try {
+        await res.send("All")
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 
