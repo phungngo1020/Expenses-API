@@ -17,7 +17,7 @@
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "sharp": "^0.25.2",
-    "validator": "^13.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
